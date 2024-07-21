@@ -4,168 +4,202 @@
 package S14
 
 // Services struct contains service clients for different functionalities of a Sonos device.
-type AutoplayIncludeLinkedZones bool
+type MicEnabled uint
 
-type WifiEnabled bool
+type AccountMd string
 
-type AccountID string
-
-type TimeGeneration uint
-
-type RelativeCounterPosition int
-
-type RampTimeSeconds uint
-
-type AlarmRunSequence string
-
-type TimeZoneAutoAdjustDst bool
-
-type Timeout uint
+type MobileIPAndPort string
 
 type SeekTarget string
 
-type ExtraInfo string
-
-type TVConfigurationError bool
-
-const (
-	OnButtonLockState  ButtonLockState = "On"
-	OffButtonLockState ButtonLockState = "Off"
-)
-
-type ButtonLockState string
-
-const (
-	SleepTimerRampTypeRampType RampType = "SLEEP_TIMER_RAMP_TYPE"
-	AlarmRampTypeRampType      RampType = "ALARM_RAMP_TYPE"
-	AutoplayRampTypeRampType   RampType = "AUTOPLAY_RAMP_TYPE"
-)
-
-type RampType string
-
-type AudioDelayRightRear string
-
-type AlarmList string
-
-type EnqueuedTransportURI string
-
-type SubCrossover string
-
-type ThirdPartyMediaServersX string
-
-type GroupCoordinatorIsLocal bool
+type SavedQueuesUpdateID string
 
 type LeftVolume uint
 
-type VariableName string
+type AudioDelay string
 
-type Invisible bool
+type SurroundMode string
 
-type SatRoomUUID string
+type ThirdPartyMediaServersX string
 
-type LastChangedPlayState string
+type AlarmVolume uint
 
-type ServiceId uint
+type TransportErrorURI string
 
-type ZonePlayerUUIDsInGroup string
+type Prefix string
 
-type SleepTimerGeneration uint
+type UpdateURL string
 
-type SourceState string
+type UpdateExtraOptions string
 
-type AvailableRoomCalibration string
-
-type TrackNumber uint
-
-type SortCriteria string
-
-type Count uint
-
-type TagValueList string
-
-type Seed string
-
-const ()
-
-type TransportPlaySpeed string
-
-type AlarmLoggedStartTime string
-
-type RecentlyPlayedUpdateID string
-
-type TrackNumbersCSV string
-
-type VolumeDB int
-
-type StubsCreated string
-
-type AbsoluteCounterPosition int
-
-type URIMetaData string
-
-type AVTransportURIMetaData string
+type TimeFormat string
 
 type LIST_URI string
 
-const (
-	InputDirection  Direction = "Input"
-	OutputDirection Direction = "Output"
-)
+type AutoplayIncludeLinkedZones bool
 
-type Direction string
+type SubPolarity string
 
-type SortCapabilities string
+type RoomCalibrationCoefficients string
 
-type Browseable bool
+type AccountNickname string
 
-type FavoritePresetsUpdateID string
+type DirectControlAccountID string
+
+type SourceState string
+
+type TrackNumber uint
+
+type AutoplayVolume uint
+
+type DID string
+
+type IsExpired bool
+
+type TimeZoneInformation string
 
 type TransportErrorHttpHeaders string
 
-type PossibleRecordStorageMedia string
+const ()
 
-type AutoplayRoomUUID string
+type RecordStorageMedium string
 
-type SourceAreaIds string
+type NumberOfTracks uint
 
-type FavoritesUpdateID string
+type NumTracks uint
+
+type SleepTimerState string
+
+type Count uint
+
+type TargetRoomName string
+
+const (
+	OnLEDFeedbackState  LEDFeedbackState = "On"
+	OffLEDFeedbackState LEDFeedbackState = "Off"
+)
+
+type LEDFeedbackState string
+
+type CustomerID string
+
+type AlbumArtistDisplayOption string
+
+type Treble int
+
+type TimeGeneration uint
+
+type InstanceID uint
+
+type OutputFixed bool
+
+type RoomCalibrationAvailable bool
+
+type SatRoomUUID string
 
 type MACAddress string
 
-type AvailableSoftwareUpdate string
+type ExtraInfo string
 
-type DirectControlClientID string
+type SourceAreaIds string
 
-type SearchCapabilities string
+type MemberID string
+
+type ResumePlayback bool
+
+type ConnectionIDs string
+
+type SnoozeRunning bool
+
+type Timeout uint
+
+type Version string
+
+type AlarmEnabled bool
+
+type AutoplaySource string
+
+type WirelessMode uint
+
+type RoomDetectionPlayId uint
+
+type LIST_URIMetaData string
+
+type AVTransportID int
+
+type RadioLocationUpdateID uint
+
+type HardwareVersion string
+
+type WifiEnabled bool
+
+type RightVolume uint
+
+type TrackDuration string
+
+type AVTransportURI string
+
+type DirectControlIsSuspended bool
+
+type TrackList string
+
+type FavoritePresetsUpdateID string
+
+type SettingsReplicationState string
+
+type ServiceListVersion string
+
+type ZoneGroupState string
+
+type RecordQualityMode string
+
+type Track uint
+
+type NumTracksChange int
+
+type SearchCriteria string
+
+type FavoritesUpdateID string
+
+type ChannelFreq uint
 
 type ServiceDescriptorList string
 
-type SessionId string
+type OAuthDeviceID string
 
-type QueueUpdateID uint
+type UpdateFlags uint
+
+type SourceAreasUpdateID string
+
+type AlarmIDRunning uint
+
+type LastIndexChange string
 
 type ShareIndexLastError string
 
-const (
-	NonePlaybackStorageMedium    PlaybackStorageMedium = "NONE"
-	NetworkPlaybackStorageMedium PlaybackStorageMedium = "NETWORK"
-)
+type AccountPassword string
 
-type PlaybackStorageMedium string
+type TimeZone string
 
-type TransportSettings string
+type VoiceUpdateID uint
 
-type EnqueueAs bool
+type URIMetaData string
 
-type ResetVolumeAfter bool
+type LocalGroupUUID string
 
-type SortOrder string
+type QueuePolicy string
 
-type ButtonState string
+type VariableName string
 
-type DailyIndexRefreshTime string
+type AlarmIncludeLinkedZones bool
 
-type TimeFormat string
+type HTSatChanMapSet string
+
+type Orientation int
+
+type RoomCalibrationEnabled bool
+
+type MediaDuration string
 
 const (
 	TrackNrSeekMode   SeekMode = "TRACK_NR"
@@ -175,155 +209,67 @@ const (
 
 type SeekMode string
 
-type SleepTimerState string
-
-type LastIndexChange string
-
-type ContainerUpdateIDs string
-
-type HTAudioIn uint
-
-type PossibleRecordQualityModes string
-
-type NumTracks uint
-
-type AlbumArtistDisplayOption string
-
-type UserRadioUpdateID string
-
-type Configuration string
-
-type IRCode string
-
-type RoomCalibrationCalibrationMode string
-
-type UpdateIDX uint
-
-type TimeZoneInformation string
-
-type AlarmListVersion string
-
-type Origin string
-
-type RadioLocationUpdateID uint
-
-type WirelessLeafOnly bool
-
-type SnoozeRunning bool
-
-type URI string
-
-type ZoneName string
-
-type ConfigMode string
-
-type DialogLevel string
-
-type MediaDuration string
-
-type RelativeTimePosition string
-
-type RejoinGroup bool
-
-type RightVolume uint
-
-type MobileDeviceUDN string
-
-type ISO8601Time string
-
-type AlarmEnabled bool
-
-type TransportStatus string
-
-type MobileDeviceName string
-
-type VolumeAVTransportURI string
-
-type AccountCredential string
-
-const (
-	OnLEDState  LEDState = "On"
-	OffLEDState LEDState = "Off"
-)
-
-type LEDState string
-
-type RoomDetectionDurationMilliseconds uint
-
 type ShareIndexInProgress bool
-
-type RoomDetectionChirpChannel uint
 
 type ConfigModeState string
 
-type Username string
+type RemoteConfigured bool
 
-type Bass int
+type ServiceTypeList string
 
-type EQType string
+type NightMode bool
 
-type AccountUID uint
+type ZoneName string
 
-type SourceAreasUpdateID string
+type AudioDelayRightRear string
 
-type VLIState string
+type SessionId string
 
-type HasConfiguredSSID bool
+type QueueID uint
 
-type Queue string
+type VolumeDB int
 
-type SurroundMode string
+type Loudness bool
 
-type RoomCalibrationID string
+type ProgramURI string
 
-const (
-	StoppedTransportState        TransportState = "STOPPED"
-	PlayingTransportState        TransportState = "PLAYING"
-	PausedPlaybackTransportState TransportState = "PAUSED_PLAYBACK"
-	TransitioningTransportState  TransportState = "TRANSITIONING"
-)
+type SubCrossover string
 
-type TransportState string
+type AccountCredential string
 
-type RecordQualityMode string
+type Icon string
 
-type SourceProtocolInfo string
+type GroupCoordinatorIsLocal bool
 
-type ConnectionManager string
-
-type RadioFavoritesUpdateID uint
-
-type UserIdHashCode string
-
-type Speed string
-
-type AreasUpdateID string
-
-type AlarmProgramURI string
-
-type ResumePlayback bool
-
-type TransportErrorDescription string
-
-type LastChange string
-
-type SupportsAudioClip bool
-
-type HardwareVersion string
+type ZonePlayerUUIDsInGroup string
 
 type GroupVolume uint
 
-type TimeZone string
+type Mute bool
 
-type DateFormat string
+type AlarmState string
 
-type DirectControlIsSuspended bool
+type ChannelMapSet string
 
-type GroupID string
+type NetsettingsUpdateID string
 
-type Prefix string
+type PossiblePlaybackStorageMedia string
 
-type Icon string
+type VLIState string
+
+type SystemUpdateID uint
+
+type VolumeAVTransportURI string
+
+type ThirdPartyHash string
+
+type AlarmProgramURI string
+
+type AlarmRoomUUID string
+
+type TimeZoneIndex int
+
+type RoomCalibrationState int
 
 const (
 	MasterChannel Channel = "Master"
@@ -333,114 +279,13 @@ const (
 
 type Channel string
 
-const ()
-
-type RecordStorageMedium string
-
-type EnqueuedTransportURIMetaData string
-
-const (
-	BrowseMetadataBrowseFlag       BrowseFlag = "BrowseMetadata"
-	BrowseDirectChildrenBrowseFlag BrowseFlag = "BrowseDirectChildren"
-)
-
-type BrowseFlag string
-
-type TOSLinkConnected bool
-
-type RDMEnabled bool
-
-type Track uint
-
-type SearchCriteria string
-
-type Index uint
-
-type DisplaySoftwareVersion string
-
-type QueueOwnerContext string
-
-type AccountMd string
-
-type TimeStamp string
-
-type Section uint
-
-type ProtocolInfo string
-
-type ConnectionID int
-
-type SystemUpdateID uint
-
-type RoomDetectionChirpIfPlayingSwappableAudio bool
-
 type PresetNameList string
 
-type AlarmVolume uint
+type AccountUID uint
 
-type ValidPlayModes string
+type TransportStatus string
 
-const (
-	AllUpdateType      UpdateType = "All"
-	SoftwareUpdateType UpdateType = "Software"
-)
-
-type UpdateType string
-
-type RoomCalibrationState int
-
-const (
-	MasterMuteChannel      MuteChannel = "Master"
-	LfMuteChannel          MuteChannel = "LF"
-	RfMuteChannel          MuteChannel = "RF"
-	SpeakerOnlyMuteChannel MuteChannel = "SpeakerOnly"
-)
-
-type MuteChannel string
-
-type ConfigModeOptions string
-
-type SurroundLevel string
-
-type AccountType uint
-
-type RecordMediumWriteStatus string
-
-type AlarmIDRunning uint
-
-type QueueID uint
-
-const (
-	RemoveUnresponsiveDeviceActionType                     UnresponsiveDeviceActionType = "Remove"
-	TopologyMonitorProbeUnresponsiveDeviceActionType       UnresponsiveDeviceActionType = "TopologyMonitorProbe"
-	VerifyThenRemoveSystemwideUnresponsiveDeviceActionType UnresponsiveDeviceActionType = "VerifyThenRemoveSystemwide"
-)
-
-type UnresponsiveDeviceActionType string
-
-type IsZoneBridge bool
-
-type LocalGroupUUID string
-
-type BootSeq uint
-
-type EQValue int
-
-type ThirdPartyHash string
-
-type ConnectionIDs string
-
-type MicEnabled uint
-
-type DirectControlAccountID string
-
-type MemberID string
-
-type TrackList string
-
-type SinkProtocolInfo string
-
-type SoftwareVersion string
+type SleepTimerGeneration uint
 
 const (
 	OnIRRepeaterState       IRRepeaterState = "On"
@@ -451,6 +296,125 @@ const (
 type IRRepeaterState string
 
 const (
+	SleepTimerRampTypeRampType RampType = "SLEEP_TIMER_RAMP_TYPE"
+	AlarmRampTypeRampType      RampType = "ALARM_RAMP_TYPE"
+	AutoplayRampTypeRampType   RampType = "AUTOPLAY_RAMP_TYPE"
+)
+
+type RampType string
+
+type AccountID string
+
+type ZoneGroupID string
+
+const (
+	RemoveUnresponsiveDeviceActionType                     UnresponsiveDeviceActionType = "Remove"
+	TopologyMonitorProbeUnresponsiveDeviceActionType       UnresponsiveDeviceActionType = "TopologyMonitorProbe"
+	VerifyThenRemoveSystemwideUnresponsiveDeviceActionType UnresponsiveDeviceActionType = "VerifyThenRemoveSystemwide"
+)
+
+type UnresponsiveDeviceActionType string
+
+type TransportActions string
+
+type ValidPlayModes string
+
+type ConnectionManager string
+
+type CopyrightInfo string
+
+type SubGain string
+
+type Origin string
+
+type VolumeAdjustment int
+
+type MemberList string
+
+type Filter string
+
+type SortCriteria string
+
+type UserRadioUpdateID string
+
+type IRRemoteName string
+
+const (
+	MasterMuteChannel      MuteChannel = "Master"
+	LfMuteChannel          MuteChannel = "LF"
+	RfMuteChannel          MuteChannel = "RF"
+	SpeakerOnlyMuteChannel MuteChannel = "SpeakerOnly"
+)
+
+type MuteChannel string
+
+type RampTimeSeconds uint
+
+type VariableStringValue string
+
+type StubsCreated string
+
+type MuseHouseholdId string
+
+const (
+	StoppedTransportState        TransportState = "STOPPED"
+	PlayingTransportState        TransportState = "PLAYING"
+	PausedPlaybackTransportState TransportState = "PAUSED_PLAYBACK"
+	TransitioningTransportState  TransportState = "TRANSITIONING"
+)
+
+type TransportState string
+
+type RecordMediumWriteStatus string
+
+type RelativeCounterPosition int
+
+type SecureRegState uint
+
+type BufferingResultCode int
+
+type Volume uint
+
+const (
+	NonePlaybackStorageMedium    PlaybackStorageMedium = "NONE"
+	NetworkPlaybackStorageMedium PlaybackStorageMedium = "NETWORK"
+)
+
+type PlaybackStorageMedium string
+
+type LastChange string
+
+type SourceProtocolInfo string
+
+type Invisible bool
+
+type RoomDetectionDurationMilliseconds uint
+
+type SupportsOutputFixed bool
+
+type DirectControlClientID string
+
+type ConnectionID int
+
+type LastChangedPlayState string
+
+type AlarmListVersion string
+
+type ObjectID string
+
+const (
+	OkConnectionStatus                    ConnectionStatus = "OK"
+	ContentFormatMismatchConnectionStatus ConnectionStatus = "ContentFormatMismatch"
+	InsufficientBandwidthConnectionStatus ConnectionStatus = "InsufficientBandwidth"
+	UnreliableChannelConnectionStatus     ConnectionStatus = "UnreliableChannel"
+	UnknownConnectionStatus               ConnectionStatus = "Unknown"
+)
+
+type ConnectionStatus string
+
+type ConfigMode string
+
+const (
 	NormalAlarmPlayMode          AlarmPlayMode = "NORMAL"
 	RepeatAllAlarmPlayMode       AlarmPlayMode = "REPEAT_ALL"
 	ShuffleNorepeatAlarmPlayMode AlarmPlayMode = "SHUFFLE_NOREPEAT"
@@ -459,85 +423,140 @@ const (
 
 type AlarmPlayMode string
 
-type TransportErrorHttpCode string
+const (
+	OnButtonLockState  ButtonLockState = "On"
+	OffButtonLockState ButtonLockState = "Off"
+)
 
-type Version string
+type ButtonLockState string
 
-type ChannelFreq uint
+type BootSeq uint
 
-type VoiceConfigState uint
+type SubEnabled bool
 
-type Loudness bool
+type IncludeControllers bool
 
-type ChannelMap string
+type AbsoluteTimePosition string
 
-type RoomCalibrationCoefficients string
+type MID string
 
-type AccountPassword string
+type AuthorizationCode string
 
-type TimeServer string
+type UpdateIDX uint
 
-type AlarmRunning bool
+type AlarmRunSequence string
 
-type OAuthDeviceID string
+const (
+	AllUpdateType      UpdateType = "All"
+	SoftwareUpdateType UpdateType = "Software"
+)
 
-type ZoneGroupName string
+type UpdateType string
 
-type AlarmState string
-
-type HTSatChanMapSet string
-
-type OutputFixed bool
-
-type NightMode bool
-
-type UpdateItem string
-
-type AlarmID uint
-
-type RestartPending bool
-
-type UpdateFlags uint
-
-type NetsettingsUpdateID string
-
-type Orientation int
-
-type UpdateURL string
-
-type IsIdle bool
-
-type AutoplaySource string
-
-type QueueOwnerID string
-
-type TrackDuration string
-
-type LIST_URIMetaData string
-
-type RoomCalibrationEnabled bool
-
-type Result string
-
-type SerialNumber string
-
-type AutoplayVolume uint
-
-type ProgramURI string
-
-type RoomCalibrationAvailable bool
-
-type AccountNickname string
-
-type AlarmIncludeLinkedZones bool
-
-type AlarmRoomUUID string
+type TimeStamp string
 
 type RcsID int
 
-type TargetRoomName string
+type HTBondedZoneCommitState uint
 
-type QueuePolicy string
+type ConfigModeOptions string
+
+type RoomCalibrationID string
+
+type AlarmList string
+
+type MuseSessions string
+
+type URI string
+
+type RedirectURI string
+
+type AvailableSoftwareUpdate string
+
+type TimeZoneAutoAdjustDst bool
+
+type TimeServer string
+
+type PlayerID string
+
+type QueueUpdateID uint
+
+type ShareListUpdateID string
+
+type AccountType uint
+
+type IsZoneBridge bool
+
+type DisplaySoftwareVersion string
+
+type GroupMute bool
+
+type Seed string
+
+type MusicSurroundLevel string
+
+type CachedOnly bool
+
+type AlarmRunning bool
+
+type TransportSettings string
+
+const (
+	InputDirection  Direction = "Input"
+	OutputDirection Direction = "Output"
+)
+
+type Direction string
+
+type Browseable bool
+
+const (
+	OnLEDState  LEDState = "On"
+	OffLEDState LEDState = "Off"
+)
+
+type LEDState string
+
+type RoomDetectionChirpIfPlayingSwappableAudio bool
+
+type UserIdHashCode string
+
+type Section uint
+
+type SinkProtocolInfo string
+
+type SerialNumber string
+
+type Username string
+
+type SavedQueueTitle string
+
+type ContainerUpdateIDs string
+
+type HasConfiguredSSID bool
+
+type EQType string
+
+type HeadphoneConnected bool
+
+type AudioDelayLeftRear string
+
+type PossibleRecordStorageMedia string
+
+const (
+	BrowseMetadataBrowseFlag       BrowseFlag = "BrowseMetadata"
+	BrowseDirectChildrenBrowseFlag BrowseFlag = "BrowseDirectChildren"
+)
+
+type BrowseFlag string
+
+type EQValue int
+
+type ChannelMap string
+
+type SurroundEnabled bool
+
+type MobileDeviceName string
 
 const (
 	OnceRecurrence     Recurrence = "ONCE"
@@ -548,67 +567,129 @@ const (
 
 type Recurrence string
 
-type AVTransportID int
-
-type AbsoluteTimePosition string
-
-type SurroundEnabled bool
-
-type KeepGrouped bool
-
-type MID string
-
-type ZoneGroupState string
-
-type HeadphoneConnected bool
-
-type AudioDelayLeftRear string
-
-type MuseHouseholdId string
-
-type IncludeControllers bool
-
-type LIST_URI_AND_METADATA string
-
-type SpeakerSize uint
-
-type DiagnosticID uint
-
-type PossiblePlaybackStorageMedia string
-
-type NumTracksChange int
-
-type ObjectID string
-
-type ShareListUpdateID string
-
-type HTFreq uint
-
-type Treble int
+type TransportErrorDescription string
 
 type CrossfadeMode bool
 
-type AVTransportURI string
+type IPAddress string
 
-type MusicSurroundLevel string
+type DiagnosticID uint
 
-type NumberOfTracks uint
+type GroupID string
 
-type GroupVolumeChangeable bool
-
-type TrackURI string
-
-type MuseSessions string
-
-type PlayerID string
+type StreamRestartState string
 
 type HouseholdID string
 
+type KeepGrouped bool
+
+type Bass int
+
+type RDMEnabled bool
+
+type EnqueueAs bool
+
+type SearchCapabilities string
+
+type ButtonState string
+
+type UpdateItem string
+
+type DateFormat string
+
+type IRCode string
+
+type ZoneGroupName string
+
+type AlarmID uint
+
+type AutoplayRoomUUID string
+
+type QueueOwnerContext string
+
+type LIST_URI_AND_METADATA string
+
+type AlarmProgramMetaData string
+
+type TrackMetaData string
+
+type Configuration string
+
+type AreasUpdateID string
+
+type EnqueuedTransportURIMetaData string
+
+type Queue string
+
+type ResetVolumeAfter bool
+
+type ProtocolInfo string
+
+type RecentlyPlayedUpdateID string
+
+type HTAudioIn uint
+
+type ServiceId uint
+
+type RestartPending bool
+
+type AirPlayEnabled bool
+
+type AutoplayUseVolume bool
+
+type TransportErrorHttpCode string
+
+type TagValueList string
+
+type SortCapabilities string
+
+type SupportsAudioIn bool
+
 type MoreInfo string
+
+type Flags uint
+
+type TOSLinkConnected bool
+
+type SurroundLevel string
+
+type AlarmLoggedStartTime string
+
+type RejoinGroup bool
+
+type Speed string
 
 type VirtualLineInGroupID string
 
-type TimeZoneIndex int
+type MobileDeviceUDN string
+
+type EnqueuedTransportURI string
+
+type RadioFavoritesUpdateID uint
+
+type TVConfigurationError bool
+
+type SpeakerSize uint
+
+type AccountTier uint
+
+type ISO8601Time string
+
+type TrackURI string
+
+type AbsoluteCounterPosition int
+
+type Result string
+
+type Index uint
+
+type VoiceConfigState uint
+
+type RoomDetectionChirpChannel uint
+
+type QueueOwnerID string
+
+type DailyIndexRefreshTime string
 
 const (
 	NormalPlayMode           PlayMode = "NORMAL"
@@ -621,127 +702,46 @@ const (
 
 type PlayMode string
 
-type VolumeAdjustment int
+type SortOrder string
 
-type RemoteConfigured bool
+type HTFreq uint
 
-const (
-	OnLEDFeedbackState  LEDFeedbackState = "On"
-	OffLEDFeedbackState LEDFeedbackState = "Off"
-)
-
-type LEDFeedbackState string
-
-type IsExpired bool
-
-type AlarmProgramMetaData string
-
-type SavedQueuesUpdateID string
-
-type WirelessMode uint
-
-type GroupMute bool
-
-type CachedOnly bool
-
-type InstanceID uint
-
-type AuthorizationCode string
-
-type Filter string
-
-type SupportsAudioIn bool
-
-type HTBondedZoneCommitState uint
-
-type RoomDetectionPlayId uint
-
-type SupportsOutputFixed bool
-
-type SubGain string
-
-type StreamRestartState string
-
-const (
-	OkConnectionStatus                    ConnectionStatus = "OK"
-	ContentFormatMismatchConnectionStatus ConnectionStatus = "ContentFormatMismatch"
-	InsufficientBandwidthConnectionStatus ConnectionStatus = "InsufficientBandwidth"
-	UnreliableChannelConnectionStatus     ConnectionStatus = "UnreliableChannel"
-	UnknownConnectionStatus               ConnectionStatus = "Unknown"
-)
-
-type ConnectionStatus string
-
-type UpdateExtraOptions string
-
-type BufferingResultCode int
-
-type IRRemoteName string
-
-type VariableStringValue string
-
-type AccountUDN string
-
-type UpdateID uint
-
-type HdmiCecAvailable bool
-
-type VoiceUpdateID uint
-
-type ZoneGroupID string
-
-type MobileIPAndPort string
-
-type TransportErrorURI string
-
-type MemberList string
-
-type Volume uint
-
-type RedirectURI string
-
-type AutoplayUseVolume bool
-
-type Curated bool
-
-type SecureRegState uint
-
-type SubPolarity string
-
-type SettingsReplicationState string
+type WirelessLeafOnly bool
 
 type BehindWifiExtender uint
 
-type CopyrightInfo string
+type RoomCalibrationCalibrationMode string
 
-type Flags uint
+const ()
 
-type DID string
+type TransportPlaySpeed string
 
-type Mute bool
+type PossibleRecordQualityModes string
 
-type AudioDelay string
+type AVTransportURIMetaData string
 
-type AccountTier uint
+type RelativeTimePosition string
 
-type TrackMetaData string
+type SupportsAudioClip bool
 
-type SavedQueueTitle string
+type AvailableRoomCalibration string
 
-type IPAddress string
-
-type SubEnabled bool
-
-type TransportActions string
-
-type ServiceListVersion string
+type SoftwareVersion string
 
 type Code string
 
-type ServiceTypeList string
+type Curated bool
 
-type CustomerID string
+type UpdateID uint
 
-type AirPlayEnabled bool
+type IsIdle bool
 
-type ChannelMapSet string
+type HdmiCecAvailable bool
+
+type GroupVolumeChangeable bool
+
+type TrackNumbersCSV string
+
+type DialogLevel string
+
+type AccountUDN string

@@ -3,7 +3,7 @@
 // Package S18 contains the implementation for the Sonos One (Model S18) services.
 package S18
 
-import do "github.com/hoomy-official/go-shared/pkg/net/do"
+import do "github.com/vanyda-official/go-shared/pkg/net/do"
 
 // Services struct contains service clients for different functionalities of a Sonos device.
 type Services struct {

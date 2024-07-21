@@ -6,8 +6,8 @@ import (
 	"context"
 	"encoding/xml"
 	"fmt"
-	do "github.com/hoomy-official/go-shared/pkg/net/do"
 	opts "github.com/hoomy-official/go-sonos/opts"
+	do "github.com/vanyda-official/go-shared/pkg/net/do"
 	"net/url"
 )
 

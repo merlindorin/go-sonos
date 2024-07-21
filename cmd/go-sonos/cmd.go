@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/alecthomas/kong"
-	c "github.com/hoomy-official/go-shared/pkg/cmd"
 	"github.com/hoomy-official/go-sonos/cmd/go-sonos/generate"
 	"github.com/joho/godotenv"
+	c "github.com/vanyda-official/go-shared/pkg/cmd"
 )
 
 const (

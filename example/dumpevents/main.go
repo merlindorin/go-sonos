@@ -14,8 +14,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/hoomy-official/go-shared/pkg/net/do"
 	"github.com/hoomy-official/go-sonos/api/v2/S19"
+	"github.com/vanyda-official/go-shared/pkg/net/do"
 	"golang.org/x/sync/errgroup"
 )
 

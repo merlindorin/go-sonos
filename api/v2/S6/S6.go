@@ -3,7 +3,7 @@
 // Package S6 contains the implementation for the Sonos Play:5 (Model S6) services.
 package S6
 
-import do "github.com/hoomy-official/go-shared/pkg/net/do"
+import do "github.com/vanyda-official/go-shared/pkg/net/do"
 
 // Services struct contains service clients for different functionalities of a Sonos device.
 type Services struct {

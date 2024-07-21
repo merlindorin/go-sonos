@@ -8,9 +8,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/hoomy-official/go-shared/pkg/cmd"
 	"github.com/hoomy-official/go-sonos/generator"
 	"github.com/hoomy-official/go-sonos/specs"
+	"github.com/vanyda-official/go-shared/pkg/cmd"
 	"go.uber.org/zap"
 	"golang.org/x/sync/errgroup"
 )

@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/hoomy-official/go-shared/pkg/net/do"
+	"github.com/vanyda-official/go-shared/pkg/net/do"
 )
 
 const (
@@ -34,7 +34,7 @@ func WithSonosUPnPOptions(
 }
 
 func prepareSOAPRequest(body interface{}) func(ctx context.Context, request *http.Request) error {
-	return func(ctx context.Context, request *http.Request) error {
+	return func(_ context.Context, request *http.Request) error {
 		e := &Envelope{
 			EncodingStyle: soapEncodingStyle,
 			Xmlns:         soapEnvelopeSchema,
@@ -54,7 +54,7 @@ func prepareSOAPRequest(body interface{}) func(ctx context.Context, request *htt
 }
 
 func processSOAPResponse(resBody interface{}) func(ctx context.Context, _ *http.Request, res *http.Response) error {
-	return func(ctx context.Context, _ *http.Request, res *http.Response) error {
+	return func(_ context.Context, _ *http.Request, res *http.Response) error {
 		defer res.Body.Close()
 		if res.StatusCode != 200 && res.ContentLength == 0 {
 			return fmt.Errorf("goupnp: SOAP request got HTTP %s", res.Status)

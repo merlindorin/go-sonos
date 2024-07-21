@@ -3,7 +3,7 @@
 // Package S27 contains the implementation for the Sonos Roam (Model S27) services.
 package S27
 
-import do "github.com/hoomy-official/go-shared/pkg/net/do"
+import do "github.com/vanyda-official/go-shared/pkg/net/do"
 
 // Services struct contains service clients for different functionalities of a Sonos device.
 type Services struct {

@@ -8,9 +8,9 @@ import (
 	"slices"
 	"time"
 
-	"github.com/hoomy-official/go-shared/pkg/discover"
-	"github.com/hoomy-official/go-shared/pkg/resolvers/ssdp"
 	s "github.com/koron/go-ssdp"
+	"github.com/vanyda-official/go-shared/pkg/discover"
+	"github.com/vanyda-official/go-shared/pkg/resolvers/ssdp"
 	"golang.org/x/sync/errgroup"
 )
 

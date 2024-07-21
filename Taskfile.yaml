@@ -21,6 +21,4 @@ tasks:
     summary: |
       Use specfiles to generate sonos api.
     cmds:
-      - task: go:run
-        vars:
-          CLI_ARGS: 'generate'
+      - cmd: go run ./cmd/go-sonos generate

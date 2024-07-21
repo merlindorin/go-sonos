@@ -37,7 +37,7 @@ func GenerateService(w io.Writer, api specs.APISpec, service specs.Service, d sp
 		Type().
 		Id(service.ServiceName).
 		Struct(
-			jen.Id("doer").Qual("github.com/hoomy-official/go-shared/pkg/net/do", "Doer"),
+			jen.Id("doer").Qual("github.com/vanyda-official/go-shared/pkg/net/do", "Doer"),
 		).
 		Line().
 		Comment(fmt.Sprintf("New%s initializes a new %s with the provided Doer.", service.ServiceName, service.ServiceName)).
@@ -45,7 +45,7 @@ func GenerateService(w io.Writer, api specs.APISpec, service specs.Service, d sp
 		Func().
 		Id(fmt.Sprintf("New%s", service.ServiceName)).
 		Params(
-			jen.Id("doer").Qual("github.com/hoomy-official/go-shared/pkg/net/do", "Doer"),
+			jen.Id("doer").Qual("github.com/vanyda-official/go-shared/pkg/net/do", "Doer"),
 		).
 		Op("*").Id(service.ServiceName).
 		Block(

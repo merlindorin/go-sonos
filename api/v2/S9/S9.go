@@ -3,7 +3,7 @@
 // Package S9 contains the implementation for the Sonos Playbar (Model S9) services.
 package S9
 
-import do "github.com/hoomy-official/go-shared/pkg/net/do"
+import do "github.com/vanyda-official/go-shared/pkg/net/do"
 
 // Services struct contains service clients for different functionalities of a Sonos device.
 type Services struct {

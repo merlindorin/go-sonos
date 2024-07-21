@@ -3,7 +3,7 @@
 // Package S38 contains the implementation for the Sonos One SL (Model S38) services.
 package S38
 
-import do "github.com/hoomy-official/go-shared/pkg/net/do"
+import do "github.com/vanyda-official/go-shared/pkg/net/do"
 
 // Services struct contains service clients for different functionalities of a Sonos device.
 type Services struct {

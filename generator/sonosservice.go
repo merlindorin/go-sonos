@@ -44,7 +44,7 @@ func GenerateServices(w io.Writer, api specs.APISpec, doc specs.Documentation) e
 		Line().
 		Comment("NewService creates and returns a new Services struct initialized with base URLs for Sonos services available.").
 		Line().
-		Func().Id("NewService").Params(jen.Id("doer").Qual("github.com/hoomy-official/go-shared/pkg/net/do", "Doer")).Op("*").Id("Services").Block(
+		Func().Id("NewService").Params(jen.Id("doer").Qual("github.com/vanyda-official/go-shared/pkg/net/do", "Doer")).Op("*").Id("Services").Block(
 		jen.Return(
 			jen.Op("&").Id("Services").Values(
 				jen.DictFunc(
