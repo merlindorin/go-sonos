@@ -1,0 +1,42 @@
+// CODE GENERATED, DO NOT EDIT
+
+// Package S6 contains the implementation for the Sonos Play:5 (Model S6) services.
+package S6
+
+import do "github.com/hoomy-official/go-shared/pkg/net/do"
+
+// Services struct contains service clients for different functionalities of a Sonos device.
+type Services struct {
+	// Control the sonos alarms and times
+	AlarmClock *AlarmClockService
+}
+
+// NewService creates and returns a new Services struct initialized with base URLs for Sonos services available.
+func NewService(doer do.Doer) *Services {
+	return &Services{AlarmClock: NewAlarmClockService(doer)}
+}
+
+// Model returns the model identifier of the Sonos device.
+func (s Services) Model() string {
+	return "S6"
+}
+
+// ModelDescription returns a human-readable description of the Sonos model.
+func (s Services) ModelDescription() string {
+	return "Sonos Play:5"
+}
+
+// SoftwareGeneration returns the generation of the software the services are running on.
+func (s Services) SoftwareGeneration() int {
+	return 2
+}
+
+// SoftwareVersion returns the current software version installed on the Sonos device.
+func (s Services) SoftwareVersion() string {
+	return "64.3-19080"
+}
+
+// DiscoveryDate returns a timestamp (in Unix epoch time) representing when the services were discovered.
+func (s Services) DiscoveryDate() int {
+	return 1629266795
+}

@@ -1,0 +1,118 @@
+// CODE GENERATED, DO NOT EDIT
+
+package S6
+
+import (
+	"context"
+	"encoding/xml"
+	"fmt"
+	opts "github.com/hoomy-official/go-sonos/opts"
+	do "github.com/hoomy-official/go-shared/pkg/net/do"
+	"net/url"
+)
+
+const (
+	// namespaceAlarmClockService is the UPnP namespace for the Sonos service.
+	namespaceAlarmClockService = "urn:schemas-upnp-org:service:AlarmClock:1"
+
+	// eventAlarmClockService is the event path for the Sonos event service.
+	eventAlarmClockService = "/AlarmClock/Event"
+
+	// controlAlarmClockService is the action path for the Sonos service.
+	controlAlarmClockService = "/AlarmClock/Control"
+)
+
+// AlarmClockService is based on UPnP and wraps a SOAP client for communicating with Sonos services.
+type AlarmClockService struct {
+	doer do.Doer
+}
+
+// NewAlarmClockService initializes a new AlarmClockService with the provided Doer.
+func NewAlarmClockService(doer do.Doer) *AlarmClockService {
+	return &AlarmClockService{doer: doer}
+}
+
+// SubscribeEvent subscribes for events from the Sonos Event service using the provided callback URL.
+func (a AlarmClockService) SubscribeEvent(ctx context.Context, callbackURL *url.URL) error {
+	return a.doer.Do(ctx, do.WithPath(eventAlarmClockService), do.WithMethod("SUBSCRIBE"), do.WithExtraHeaderf("NT", "upnp:event"), do.WithExtraHeaderf("CALLBACK", fmt.Sprintf("<%s>", callbackURL.String())), do.WithExtraHeaderf("TIMEOUT", "Second-1800"))
+}
+
+func (a AlarmClockService) SetFormat(ctx context.Context, desiredTimeFormat TimeFormat, desiredDateFormat DateFormat) error {
+	type SetFormatReq struct {
+		DesiredTimeFormat TimeFormat
+		DesiredDateFormat DateFormat
+	}
+
+	type SetFormatNode struct {
+		Xmlns string `xml:"xmlns:u,attr"`
+		SetFormatReq
+	}
+
+	type SetFormatBody struct {
+		XMLName       xml.Name      `xml:"s:Body"`
+		SetFormatNode SetFormatNode `xml:"u:SetFormat,omitempty"`
+	}
+
+	body := SetFormatBody{SetFormatNode: SetFormatNode{
+		SetFormatReq: SetFormatReq{
+			DesiredDateFormat: desiredDateFormat,
+			DesiredTimeFormat: desiredTimeFormat,
+		},
+		Xmlns: namespaceAlarmClockService,
+	}}
+
+	return a.doer.Do(
+		ctx, opts.WithSonosUPnPOptions(controlAlarmClockService, namespaceAlarmClockService, "SetFormat", body, nil)...)
+}
+
+type AlarmClockGetFormatRes struct {
+	CurrentTimeFormat TimeFormat
+	CurrentDateFormat DateFormat
+}
+
+func (a AlarmClockService) GetFormat(ctx context.Context, getFormat *AlarmClockGetFormatRes) error {
+	type GetFormatReq struct{}
+
+	type GetFormatNode struct {
+		Xmlns string `xml:"xmlns:u,attr"`
+		GetFormatReq
+	}
+
+	type GetFormatBody struct {
+		XMLName       xml.Name      `xml:"s:Body"`
+		GetFormatNode GetFormatNode `xml:"u:GetFormat,omitempty"`
+	}
+
+	body := GetFormatBody{GetFormatNode: GetFormatNode{
+		GetFormatReq: GetFormatReq{},
+		Xmlns:        namespaceAlarmClockService,
+	}}
+
+	return a.doer.Do(
+		ctx, opts.WithSonosUPnPOptions(controlAlarmClockService, namespaceAlarmClockService, "GetFormat", body, getFormat)...)
+}
+
+// DestroyAlarm Delete an alarm
+func (a AlarmClockService) DestroyAlarm(ctx context.Context, id AlarmID) error {
+	type DestroyAlarmReq struct {
+		ID AlarmID
+	}
+
+	type DestroyAlarmNode struct {
+		Xmlns string `xml:"xmlns:u,attr"`
+		DestroyAlarmReq
+	}
+
+	type DestroyAlarmBody struct {
+		XMLName          xml.Name         `xml:"s:Body"`
+		DestroyAlarmNode DestroyAlarmNode `xml:"u:DestroyAlarm,omitempty"`
+	}
+
+	body := DestroyAlarmBody{DestroyAlarmNode: DestroyAlarmNode{
+		DestroyAlarmReq: DestroyAlarmReq{ID: id},
+		Xmlns:           namespaceAlarmClockService,
+	}}
+
+	return a.doer.Do(
+		ctx, opts.WithSonosUPnPOptions(controlAlarmClockService, namespaceAlarmClockService, "DestroyAlarm", body, nil)...)
+}

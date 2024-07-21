@@ -1,0 +1,72 @@
+{
+  "model": "S6",
+  "modelDescription": "Sonos Play:5",
+  "softwareGeneration": 2,
+  "softwareVersion": "64.3-19080",
+  "discoveryDate": "2021-08-18T06:06:35.970Z",
+  "services": [
+    {
+      "name": "AlarmClock",
+      "serviceName": "AlarmClockService",
+      "discoveryUri": "/xml/AlarmClock1.xml",
+      "serviceId": "urn:upnp-org:serviceId:AlarmClock",
+      "serviceType": "urn:schemas-upnp-org:service:AlarmClock:1",
+      "controlURL": "/AlarmClock/Control",
+      "eventSubURL": "/AlarmClock/Event",
+      "stateVariables": [
+        {
+          "name": "TimeFormat",
+          "dataType": "string",
+          "sendEvents": true
+        },
+        {
+          "name": "DateFormat",
+          "dataType": "string",
+          "sendEvents": true
+        }
+      ],
+      "actions": [
+        {
+          "name": "SetFormat",
+          "inputs": [
+            {
+              "name": "DesiredTimeFormat",
+              "direction": "in",
+              "relatedStateVariableName": "TimeFormat"
+            },
+            {
+              "name": "DesiredDateFormat",
+              "direction": "in",
+              "relatedStateVariableName": "DateFormat"
+            }
+          ]
+        },
+        {
+          "name": "GetFormat",
+          "outputs": [
+            {
+              "name": "CurrentTimeFormat",
+              "direction": "out",
+              "relatedStateVariableName": "TimeFormat"
+            },
+            {
+              "name": "CurrentDateFormat",
+              "direction": "out",
+              "relatedStateVariableName": "DateFormat"
+            }
+          ]
+        },
+        {
+          "name": "DestroyAlarm",
+          "inputs": [
+            {
+              "name": "ID",
+              "direction": "in",
+              "relatedStateVariableName": "A_ARG_TYPE_AlarmID"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

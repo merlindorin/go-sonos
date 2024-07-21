@@ -1,0 +1,26 @@
+version: '3'
+
+vars:
+  NAME: "shared"
+  PACKAGE_NAME: "github.com/hoomy-official/go-sonos"
+  PACKAGES: "pkg"
+
+includes:
+  default: https://raw.githubusercontent.com/vanyda-official/taskfile-default/main/tasks.yaml
+  git: https://raw.githubusercontent.com/vanyda-official/taskfile-git/main/tasks.yaml
+  markdownlint: https://raw.githubusercontent.com/vanyda-official/taskfile-markdownlint/main/tasks.yaml
+  golangci: https://raw.githubusercontent.com/vanyda-official/taskfile-golangci/main/tasks.yaml
+
+dotenv:
+  - .env
+  - .env.default
+
+tasks:
+  generate:
+    desc: Generate sonos API
+    summary: |
+      Use specfiles to generate sonos api.
+    cmds:
+      - task: go:run
+        vars:
+          CLI_ARGS: 'generate'
