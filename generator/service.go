@@ -118,7 +118,7 @@ func servideDef(service specs.Service, doc specs.Documentation) func(statement *
 						g.Id(lowerCamelCase(input.Name)).Id(sanitizeTypeName(input.RelatedStateVariableName))
 					}
 
-					if action.Outputs != nil && len(action.Outputs) > 0 {
+					if len(action.Outputs) > 0 {
 						g.Id(lowerCamelCase(action.Name)).Op("*").Id(fmt.Sprintf("%s%sRes", service.Name, action.Name))
 					}
 				}).
@@ -176,7 +176,7 @@ func servideDef(service specs.Service, doc specs.Documentation) func(statement *
 												group.Lit(action.Name)
 												group.Id("body")
 
-												if action.Outputs == nil || len(action.Outputs) == 0 {
+												if len(action.Outputs) == 0 {
 													group.Nil()
 												} else {
 													group.Id(lowerCamelCase(action.Name))
@@ -193,7 +193,7 @@ func servideDef(service specs.Service, doc specs.Documentation) func(statement *
 
 func ServiceResType(action specs.Actions, service specs.Service) func(statement *jen.Statement) {
 	return func(statement *jen.Statement) {
-		if action.Outputs == nil || len(action.Outputs) == 0 {
+		if len(action.Outputs) == 0 {
 			return
 		}
 		statement.

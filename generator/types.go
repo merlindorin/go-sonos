@@ -1,4 +1,4 @@
-//nolint:lll,gocognit // Code generator, verbosity is expected here.
+//nolint:lll // Code generator, verbosity is expected here.
 package generator
 
 import (

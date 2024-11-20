@@ -3,9 +3,10 @@ package opts
 import (
 	"bytes"
 	"context"
-	"encoding/xml"
 	"fmt"
 	"io"
+
+	"encoding/xml"
 	"net/http"
 
 	"github.com/vanyda-official/go-shared/pkg/net/do"
@@ -20,12 +21,12 @@ func WithSonosUPnPOptions(
 	path string,
 	actionNamespace string,
 	actionName string,
-	requestValue interface{}, // value to serialize into xml
-	responseValue interface{}, // pointer that will be hydrated with unserialize values
+	requestValue interface{},
+	responseValue interface{},
 ) []do.Option {
 	return []do.Option{
 		do.WithMethod(http.MethodPost),
-		do.WithPath(path),
+		do.WithPath(path), //nolint:govet // no extra args is provided so it is safe here
 		do.WithExtraHeader("CONTENT-TYPE", "text/xml; charset=\"utf-8\""),
 		do.WithExtraHeaderf("SOAPACTION", "%s#%s", actionNamespace, actionName),
 		do.WithPreRequestHandler("sonos_prepare_soap_upnp_request", prepareSOAPRequest(requestValue)),
@@ -56,7 +57,7 @@ func prepareSOAPRequest(body interface{}) func(ctx context.Context, request *htt
 func processSOAPResponse(resBody interface{}) func(ctx context.Context, _ *http.Request, res *http.Response) error {
 	return func(_ context.Context, _ *http.Request, res *http.Response) error {
 		defer res.Body.Close()
-		if res.StatusCode != 200 && res.ContentLength == 0 {
+		if res.StatusCode != http.StatusOK && res.ContentLength == 0 {
 			return fmt.Errorf("goupnp: SOAP request got HTTP %s", res.Status)
 		}
 
